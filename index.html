@@ -1,0 +1,358 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>zero space</title>
+  
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'branding';
+      src: url('https://files.jcink.net/uploads2/polyhymn/Branding_Aliskaje.otf');
+    }
+    @font-face {
+      font-family: 'quantify';
+      src: url('https://files.jcink.net/uploads2/polyhymn/Quantify.ttf');
+    }
+
+    :root {
+      --background: #3a1f2d;
+      --text: #fff;
+      --inv-back: #a85d72;
+      --inv-text: #fff;
+      --accent-1: #f2b6c2;
+      --accent-2: #e0d1b5;
+      --main-font: 'inter';
+      --title-font: 'branding';
+      --num-font: 'quantify';
+    }
+
+    body {
+      cursor: crosshair;
+      background: #a85d72;
+      text-align: justify;
+      font-family: 'inter';
+      font-size: 11px;
+      letter-spacing: 1px;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      line-height: 130%;
+      margin: 0;
+    }
+
+    #banner {
+      display: flex;
+      width: 100%;
+      min-height: 100vh;
+      align-items: stretch;
+    }
+
+    .b1 {
+      width: 40%;
+      background-color: var(--background);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .b1-render {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 150;
+    }
+    .b1-render img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .b1-sub {
+      margin-left: calc(100% - 320px);
+      width: 120px;
+      text-align: left;
+      margin-top: 140px;
+      position: absolute;
+      font-family: var(--main-font);
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      font-size: 10px;
+      z-index: 200;
+    }
+    .b1-1 {
+      width: 400px;
+      height: 40px;
+      position: absolute;
+      background-color: rgba(255,255,255,0.15);
+      margin-top: 240px;
+      margin-left: 40px;
+      backdrop-filter: blur(3px);
+      border-radius: 4px;
+      z-index: 200;
+    }
+    .b1-n {
+      position: absolute;
+      margin-left: calc(100% - 400px);
+      width: 400px;
+      margin-top: 205px;
+      font-family: var(--num-font);
+      color: var(--text);
+      font-size: 30px;
+      letter-spacing: 2px;
+      z-index: 200;
+    }
+    .b1-text {
+      position: absolute;
+      right: 40px;
+      top: 210px;
+      width: 260px;
+      color: #fff;
+      font-family: var(--main-font);
+      font-size: 15px;
+      font-weight: 100;
+      line-height: 150%;
+      text-align: left;
+      padding-top: 10px;
+      border-top: 2px solid #fff;
+      z-index: 200;
+    }
+    .b1-p {
+      width: 200px;
+      height: 160px;
+      overflow: hidden;
+      position: absolute;
+      margin-top: 440px;
+      margin-left: calc(100% - 140px);
+      filter: grayscale(100%);
+      z-index: 200!important;
+    }
+    .b1-b1 {
+      width: 80px;
+      height: 80px;
+      margin-left: calc(100% - 360px);
+      position: absolute;
+      margin-top: 460px;
+      background-color: var(--accent-1);
+      z-index: 200;
+    }
+    .b1-b2 {
+      width: 80px;
+      height: 80px;
+      margin-left: calc(100% - 320px);
+      position: absolute;
+      margin-top: 420px;
+      background-color: var(--accent-2);
+      z-index: 200;
+    }
+
+    .b2 {
+      width: 60%;
+      background-color: var(--inv-back);
+      position: relative;
+      overflow: hidden;
+    }
+    .b2-1 {
+      width: 400px;
+      height: 80px;
+      position: absolute;
+      background-color: var(--background);
+      margin-top: 320px;
+    }
+    .b2-p {
+      width: 500px;
+      height: 200px;
+      overflow: hidden;
+      position: absolute;
+      mix-blend-mode: darken;
+      margin-top: 80px;
+      margin-left: calc(100% - 500px);
+      filter: grayscale(100%);
+    }
+    .b2-n {
+      position: absolute;
+      margin-left: calc(100% - 560px);
+      width: 60px;
+      margin-top: 90px;
+      font-family: var(--num-font);
+      color: #fff;
+      font-size: 40px;
+      letter-spacing: 2px;
+    }
+    .b2-t {
+      position: absolute;
+      left: 40px;
+      top: 160px;
+      font-family: var(--title-font);
+      color: #fff;
+      font-size: 100px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      z-index: 104!important;
+      mix-blend-mode: normal;
+    }
+    .b2-l {
+      position: absolute;
+      width: 340px;
+      height: 8px;
+      background-color: var(--accent-1);
+      margin-left: -60px;
+      margin-top: 240px;
+    }
+    .b2-n2 {
+      position: absolute;
+      margin-left: calc(100% - 800px);
+      width: 50px;
+      margin-top: 400px;
+      font-family: var(--num-font);
+      color: #fff;
+      font-size: 60px;
+      letter-spacing: 2px;
+    }
+    .b2-text {
+      width: 320px;
+      margin-left: calc(100% - 780px);
+      color: #fff;
+      font-family: var(--main-font);
+      font-size: 15px;
+      font-weight: 100;
+      line-height: 150%;
+      margin-top: 460px;
+      position: absolute;
+      text-align: left;
+      padding-left: 20px;
+      border-left: 2px solid var(--accent-2);
+      z-index: 105!important;
+    }
+    .b2-b1 {
+      width: 80px;
+      height: 200px;
+      margin-left: calc(100% - 440px);
+      position: absolute;
+      mix-blend-mode: color-burn;
+      opacity: 0.8;
+      margin-top: 200px;
+      background-color: var(--accent-2);
+    }
+    .b2-sub {
+      margin-left: calc(100% - 800px);
+      width: 300px;
+      text-align: right;
+      margin-top: 340px;
+      position: absolute;
+      font-family: var(--main-font);
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .b2-render {
+      position: relative;
+      width: 600px;
+      margin-left: auto;
+      z-index: 120;
+      overflow: hidden;
+    }
+    .b2-render img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* 🎵 Botón minimalista */
+    .music-btn {
+      position: absolute;
+      right: 40px;
+      bottom: 40px;
+      z-index: 500;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .music-btn:hover {
+      color: var(--accent-1);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="banner">
+    <div class="b1">
+      <div class="b1-render">
+        <img src="https://u.cubeupload.com/zmonochrome/808LuWithoutLayers.png" alt="Render Grande">
+      </div>
+
+      <div class="b1-sub">[ captivated in </div>
+      <div class="b1-n">02.</div>
+      <div class="b1-text">
+        袖が触れた 夜明け前さ<br>
+        出逢う前にもう戻れないな<br>
+        誰が為にも 花は咲くらん<br>
+        この思い届かなくとも<br>
+        愛なんかが 愛なんかで<br>
+        涙のあとは消せないわ<br>
+        けどいつかは許せるなら
+      </div>
+      <div class="b1-1"></div>
+      <div class="b1-p">
+        <img width="200" src="https://i.pinimg.com/736x/9a/1a/bd/9a1abd742c9cc9c834c150a6a16bf6c6.jpg">
+      </div>
+      <div class="b1-b1"></div>
+      <div class="b1-b2"></div>
+    </div>
+
+    <div class="b2">
+      <div class="b2-n">01.</div>
+      <div class="b2-t">caraphernielia</div>
+      <div class="b2-l"></div>
+      <div class="b2-p">
+        <img width="500" src="https://i.pinimg.com/564x/b5/2c/4d/b52c4d4765fdd64be1c1624c575ebf80.jpg">
+      </div>
+      <div class="b2-1"></div>
+      <div class="b2-n2">03.</div>
+      <div class="b2-text">
+        思うより強くはないその横顔に<br>
+        僕はいつも近付けないでいる<br>
+        忘れたい思うほどにずっと忘れられない<br>
+        刃向かった昨日は僕を刺す
+      </div>
+      <div class="b2-b1"></div>
+      <div class="b2-sub">"What if I can't forget you and I'll burn your name into my throat?"</div>
+
+      <div class="b2-render">
+        <img src="https://u.cubeupload.com/zmonochrome/SisterDivergentRein.png" alt="Render">
+      </div>
+
+      <!-- 🎵 Botón minimalista Play/Pause -->
+      <button class="music-btn" onclick="toggleMusic()">►</button>
+      <audio id="bg-music" loop>
+        <source src="https://www.dropbox.com/scl/fi/ywb01iaoyhwx3pgsz1c12/Drakengard-3-OST-32-The-Final-Song-Black-Song-White-Scales-f49qsxE20dg.mp3?rlkey=f8tv2iui3qo9mp8dp7zvqlv9y&st=nyz5l0pj&dl=1" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    const btn = document.querySelector(".music-btn");
+    function toggleMusic(){
+      if(music.paused){
+        music.play();
+        btn.textContent = "❚❚"; // Pause
+      } else {
+        music.pause();
+        btn.textContent = "►"; // Play
+      }
+    }
+  </script>
+</body>
+</html>
